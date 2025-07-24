@@ -14,6 +14,6 @@ sudo tar Cxvf /usr/local/bin/ nerdctl-2.1.2-linux-amd64.tar.gz && \
 sudo tar Cxvzf /opt/cni/bin cni-plugins-linux-amd64-v1.7.1.tgz && \
 sudo cp containerd.service /usr/local/lib/systemd/system/ && \
 sudo cp containerd.service buildkitd.service && \
-sudo sed -i 's|/usr/loca/bin/containerd|/usr/local/bin/buildkitd|g' buildkitd.service && \
+sudo sed -i 's|ExecStart=/usr/local/bin/containerd|ExecStart=/usr/local/bin/buildkitd|g'  buildkitd.service && \
 sudo cp buildkitd.service /usr/local/lib/systemd/system/ && \
 sudo systemctl daemon-reload
